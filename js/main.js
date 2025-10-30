@@ -86,6 +86,14 @@ const servicesSwiper = new Swiper('.services__carousel .swiper', {
   speed: 500,
 });
 
+// Отключаем hover-эффекты на мобильных
+if (window.innerWidth <= 480) {
+  document.querySelectorAll('.adv-card').forEach(card => {
+    card.classList.add('is-open'); // принудительно открыть
+    card.onmouseenter = null;
+    card.onmouseleave = null;
+  });
+}
 
 
 
